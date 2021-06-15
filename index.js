@@ -26,6 +26,26 @@ function difference(object, base) {
   return changes(object, base);
 }
 
+
+//
+/**
+ * 来源：https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects
+ * 说明：数组中每一项都是一个对象，去除数组中相同对象
+ */
+/**
+ * 数组去重（每一项是对象）
+ * @param  {array} arr 去重的数组
+ * @param  {string} key 每个对象的唯一值
+ * @return {array}      返回一个去重之后的对象
+ */
+
+function arrayDeduplication(arr,key) {
+  arr = arr.filter((currentValue, index, arr) => {
+    return index === arr.findIndex((t) => t.key === currentValue.key)
+  })
+  return arr;
+}
+
 const cookie = {
   // 写cookies
   setCookie: function (name, value) {
