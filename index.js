@@ -41,7 +41,7 @@ function difference(object, base) {
 
 function arrayDeduplication(arr,key) {
   arr = arr.filter((currentValue, index, arr) => {
-    return index === arr.findIndex((t) => t.key === currentValue.key)
+    return index === arr.findIndex((t) => t[key] === currentValue[key])
   })
   return arr;
 }
